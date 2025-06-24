@@ -1,19 +1,28 @@
 import csv
 import pywhatkit
+import time
+
+
 with open('contacts.csv', mode='r') as file:
     reader = csv.reader(file)
-    next(reader)
+    #next(reader)
 
-    row = next(reader)
-    name = row[0]
-    phone = row[1]
-    message = row[2]
-    hour = int(row[3])
-    minute = int(row[4])
+    for row in reader:
+        name = row[0]
+        phone = row[1]
+        message = row[2]
+        hour = int(row[3])
+        minute = int(row[4])
 
-    print(f'Sending message to {name} at {hour}:{minute}...')
+        print(f'Sending message to {name} at {hour}:{minute}...')
+        try:
+            pywhatkit.sendwhatmsg(phone, message, hour, minute)
+            print(f'message to {name}scheduled.\n')
+        except Exception as e:
+            print(f'failed to send message to {name}. Error: {e}')
+        time.sleep(10)
 
-    pywhatkit.sendwhatmsg(phone, message, hour, minute)
-    
+
+
 
 

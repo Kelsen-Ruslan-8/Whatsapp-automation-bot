@@ -3,3 +3,23 @@ Time: 23:52
 Phone Number: +6281224890096
 Message: hello
 --------------------
+Date: 25/6/2025
+Time: 0:12
+Phone Number: +6281224890096
+Message: hello
+--------------------
+Date: 25/6/2025
+Time: 0:20
+Phone Number: +6281224890096
+Message: hello
+--------------------
+Date: 25/6/2025
+Time: 0:30
+Phone Number: +6281263951385
+Message: hello from python
+--------------------
+Date: 25/6/2025
+Time: 0:35
+Phone Number: +6281362123940
+Message: hello from python
+--------------------
