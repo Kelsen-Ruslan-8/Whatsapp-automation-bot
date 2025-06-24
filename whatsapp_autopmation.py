@@ -1,19 +1,20 @@
-while True:
-    name = input('Name:')
-    phone_num = input('Phone_number:')
-    Message = input('What_message_to_send:')
-    hours_time = input('What_hours_to_send:')
-    minutes_time = input('What_minutes_to_send:')
-
-    again = input('Add another contact? (yes/no):')
-    if again.lower() != 'yes':
-        break
-
-
-print('Saving', ',' , name, ',' , phone_num, '"', Message,'"', ',', hours_time,',', minutes_time  )
-
-import csv 
-
-with open('contact.csv', mode='a',newline='') as file:
+import csv
+with open('contacts.csv', mode='a', newline='') as file:
     writer = csv.writer(file)
-    writer.writerow([name, phone_num, Message, hours_time, minutes_time])
+
+    while True:
+        contact ={
+            'name': input('Name:'),
+            'Phone_number': input('Phone_number:'),
+            'Message': input('Message:'),
+            'time_hours':input('Hours:'),
+            'time_minutes': input('minutes:')
+            }
+        
+        print(f'\nSaving contac:{contact}')
+
+        writer.writerow(contact.values())
+
+        again = input('Add another contact? (yes/no):')
+        if again.lower() != 'yes':
+            break
