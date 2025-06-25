@@ -1,6 +1,8 @@
 import csv
 import pywhatkit
+import pyautogui
 import time
+
 
 
 with open('contacts.csv', mode='r') as file:
@@ -17,10 +19,13 @@ with open('contacts.csv', mode='r') as file:
         print(f'Sending message to {name} at {hour}:{minute}...')
         try:
             pywhatkit.sendwhatmsg(phone, message, hour, minute)
+            time.sleep(15)
+            pyautogui.click()
+            pyautogui.press('enter')
             print(f'message to {name}scheduled.\n')
         except Exception as e:
             print(f'failed to send message to {name}. Error: {e}')
-        time.sleep(10)
+        time.sleep(15)
 
 
 
