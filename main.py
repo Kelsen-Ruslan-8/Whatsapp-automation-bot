@@ -1,6 +1,7 @@
 import csv
 import logging
 from send_message import send_message
+import pyautogui
 
 #logging 
 logging.basicConfig(filename='send_log.txt',
@@ -24,6 +25,8 @@ with open('contacts.csv', mode='r') as file:
             print(f'Sending message to {name} at {hour}:{minute}...')
 
             send_message(phone, message, hour, minute)
+            pyautogui.click()
+            pyautogui.press('enter')
 
             logging.info(f'sent to {name} ({phone}): "{message}" at {hour}: {minute} ')
 
