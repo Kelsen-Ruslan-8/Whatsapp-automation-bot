@@ -3,10 +3,11 @@ import logging
 from send_message import send_message
 
 #logging 
-logging.basicConfig(filename='whatsapp_bot.log',
+logging.basicConfig(filename='send_log.txt',
                     level=logging.INFO,
                     format='%(asctime)s - %(levelname)s - %(message)s'
                     )
+logging.info('Test message logged')
 
 # read contacts and send message 
 with open('contacts.csv', mode='r') as file:
